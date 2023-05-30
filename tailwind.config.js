@@ -1,9 +1,17 @@
+const { screens } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
-  theme: {
+	theme: {
+		screens: {
+			xs: '350px',
+			msm: '425px',
+			...screens,
+			'3xl': '2250px',
+	  },
     extend: {
       width: {
         1600: '1600px',

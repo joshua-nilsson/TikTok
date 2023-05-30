@@ -8,7 +8,9 @@ import { ImCancelCircle } from 'react-icons/im';
 import SuggestedAccounts from './SuggestedAccounts';
 import Discover from './Discover';
 import Footer from './Footer';
+import Modal from './Modal';
 import useAuthStore from '../store/authStore';
+
 const Sidebar: NextPage = () => {
   const [showSidebar, setShowSidebar] = useState<Boolean>(true);
   const { pathname } = useRouter();
@@ -47,6 +49,7 @@ const Sidebar: NextPage = () => {
             allUsers={allUsers}
           />
           <Footer />
+		  <Modal />
         </div>
       )}
     </div>
