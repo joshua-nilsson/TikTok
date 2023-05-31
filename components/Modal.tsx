@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, KeyboardEvent, useState } from "react";
 import { Dialog, Transition, Switch } from "@headlessui/react";
 import { useLocalStorage } from "usehooks-ts";
 import { FiAlertCircle } from "react-icons/fi";
@@ -90,7 +90,7 @@ const Modal = () => {
                             : "bg-gray-200 focus-visible:ring-gray-200"
                         } relative inline-flex h-6 w-11 items-center align-middle rounded-full mt-4 msm:mt-0 msm:ml-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2`}
                         onChange={() => setIsChecked(!isChecked)}
-                        onKeyDown={({ key }) => key === "Enter" && setIsChecked(!isChecked)}
+                        onKeyDown={({ key }: KeyboardEvent<HTMLButtonElement>) => key === "Enter" && setIsChecked(!isChecked)}
                       >
                         <span
                           className={`${
@@ -98,7 +98,7 @@ const Modal = () => {
                           } inline-block h-4 w-4 transform rounded-full bg-white transition`}
                         />
                       </Switch>
-                      <Switch.Label className="inline-flex ml-2 text-sm font-medium align-middle mt-4 msm:mt-0">
+                      <Switch.Label className="inline-flex ml-2 text-sm font-medium align-middle select-none mt-4 msm:mt-0">
                         Do not show again
                       </Switch.Label>
                     </Switch.Group>
